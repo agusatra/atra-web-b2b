@@ -1,4 +1,6 @@
 ---
+import ProductCatalog from '../components/ProductCatalog.astro';
+import '../styles/global.css';
 // Bagian Logika & Data Proyek Atra Web - Industri Hidrolik & Pneumatik
 const namaPerusahaan = "PT Atra Web";
 const layananB2B = [
@@ -118,8 +120,11 @@ const layananB2B = [
   </div> <!-- 2. Menutup <div class="card-b2b"> -->
 ))}
 </div> <!-- 3. Menutup <div class="grid"> -->
+
+<ProductCatalog />
 </main>
-    <!-- KODE BARU: BAGIAN FOOTER -->
+ 
+   <!-- KODE BARU: BAGIAN FOOTER -->
     <footer style="background: #0f172a; color: #cbd5e1; padding: 40px 20px; margin-top: 60px; border-top: 4px solid #ea580c; font-size: 0.9rem;">
       <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
         

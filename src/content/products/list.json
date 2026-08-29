@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h-01",
+    "name": "Custom Heavy Duty Hydraulic Cylinder",
+    "category": "hydraulic",
+    "image": "/silinder.jpg",
+    "specification": [
+      "Bore Diameter: 50mm - 300mm",
+      "Max Pressure: 350 Bar",
+      "Desain & Fabrikasi Kustom"
+    ],
+    "ctaLink": "https://wa.me"
+  },
+  {
+    "id": "p-01",
+    "name": "Pneumatic Component Standard Supply",
+    "category": "pneumatic",
+    "image": "/pneumatic.jpg",
+    "specification": [
+      "Solenoid Valve, Selang & Konektor",
+      "Skala Grosir & Industri",
+      "Stok Ready & Terlengkap"
+    ],
+    "ctaLink": "https://wa.me"
+  },
+  {
+    "id": "s-01",
+    "name": "Hydraulic System Repair & Reconditioning",
+    "category": "services",
+    "image": "/repair.jpg",
+    "specification": [
+      "Layanan Perbaikan Presisi",
+      "Honning Tabung & Ganti Seal Kit",
+      "Uji Performa (Pressure Test)"
+    ],
+    "ctaLink": "https://wa.me"
+  }
+]
