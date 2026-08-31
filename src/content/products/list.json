@@ -70,5 +70,17 @@
       "Sertifikasi Standar Industri"
     ],
     "ctaLink": "https://wa.me"
+  },
+  {
+    "id": "h-03",
+    "name": "Silinder Hidrolik & Pneumatik Standar PT Atra Web",
+    "category": "hydraulic",
+    "image": "/silinder.jpg",
+    "specification": [
+      "Diameter Bore: Kustom sesuai kebutuhan",
+      "Panjang Stroke: Sesuai spesifikasi fabrikasi",
+      "Aplikasi: Industri & Alat Berat"
+    ],
+    "ctaLink": "https://wa.me"
   }
 ]
