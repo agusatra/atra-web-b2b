@@ -1,0 +1,100 @@
+---
+// src/pages/marketing.astro
+import { db } from '../db';
+import { stockItems, orders, products } from '../db/schema';
+import { eq, gt } from 'drizzle-orm';
+
+// Mengambil stok batang baja yang panjang sisanya masih tersedia di atas 0
+const stokBaja = await db.select({
+  id: stockItems.id,
+  serialNumber: stockItems.serialNumber,
+  currentLength: stockItems.currentLength,
+  status: stockItems.status,
+  productName: products.productName,
+  materialType: products.materialType,
+  diameter: products.diameter,
+})
+.from(stockItems)
+.leftJoin(products, eq(stockItems.productId, products.id))
+.where(gt(stockItems.currentLength, 0));
+
+// Memproses input pembuatan Surat Bukti Potong
+if (Astro.request.method === 'POST') {
+  const data = await Astro.request.formData();
+  const idBatang = parseInt(data.get('id_batang') as string);
+  const panjangPotong = parseInt(data.get('panjang_potong') as string);
+
+  // Cari detail batang untuk mengambil productId
+  const targetBatang = stokBaja.find(b => b.id === idBatang);
+
+  if (targetBatang && targetBatang.currentLength >= panjangPotong) {
+    // 1. Masukkan data ke antrean Bukti Potong Gudang
+    await db.insert(orders).values({
+      orderNumber: `BP-${Math.floor(100000 + Math.random() * 900000)}`,
+      productId: targetBatang.id,
+      stockItemId: idBatang,
+      requestedLength: panjangPotong,
+      status: 'PROSES_POTONG_GUDANG'
+    });
+
+    // 2. Kunci batang sementara agar tidak dipakai marketing lain
+    await db.update(stockItems)
+      .set({ status: 'Diproses' })
+      .where(eq(stockItems.id, idBatang));
+
+    return Astro.redirect('/marketing?success=true');
+  } else {
+    return Astro.redirect('/marketing?error=stok_kurang');
+  }
+}
+---
+<html lang="id">
+<head><title>PC Marketing - ERP Gudang</title></head>
+<body style="font-family: Arial, sans-serif; padding: 20px; background: #f4f6f9;">
+  <div style="margin-bottom: 20px;"><a href="/" style="text-decoration: none; color: #1e3a8a; font-weight: bold;">⬅ Kembali ke Beranda Portal PTM</a></div>
+  <h1 style="color: #1e3a8a;">💻 MONITOR PC MARKETING: Input Bukti Potong</h1>
+  
+  <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h2>1. Cek Sisa Panjang Batang Real-time</h2>
+    <table border="1" cellpadding="10" style="width:100%; border-collapse: collapse;">
+      <tr style="background: #e2e8f0;">
+        <th>Serial Number</th>
+        <th>Nama Produk</th>
+        <th>Spesifikasi</th>
+        <th>Sisa Panjang Asal</th>
+        <th>Status</th>
+      </tr>
+      {stokBaja.map(b => (
+        <tr>
+          <td><b>{b.serialNumber}</b></td>
+          <td>{b.productName}</td>
+          <td>{b.materialType} Dia {b.diameter}mm</td>
+          <td style="color: green; font-weight: bold;">{b.currentLength} mm</td>
+          <td><span style={`padding:4px 8px; border-radius:4px; background: ${b.status === 'Tersedia' ? '#bbf7d0' : '#fed7aa'}`}>{b.status}</span></td>
+        </tr>
+      ))}
+    </table>
+  </div>
+
+  <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h2>2. Buat Form Bukti Potong</h2>
+    <form method="POST" style="display: grid; gap: 15px; max-width: 400px;">
+      <div>
+        <label>Pilih Batang Besi:</label>
+        <select name="id_batang" style="width: 100%; padding: 8px;" required>
+          {stokBaja.map(b => (
+            <option value={b.id}>{b.serialNumber} (Sisa: {b.currentLength}mm)</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label>Potongan Diminta Pembeli (mm):</label>
+        <input type="number" name="panjang_potong" placeholder="Contoh: 1500" style="width: 100%; padding: 8px;" required />
+      </div>
+      <button type="submit" style="padding: 10px; background: #1e3a8a; color: white; border: none; cursor: pointer; font-weight: bold;">
+        Kirim ke Gudang via ERP
+      </button>
+    </form>
+  </div>
+</body>
+</html>
