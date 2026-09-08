@@ -1,29 +1,11 @@
 ---
-// 1. Amankan build lokal dari kegagalan koneksi database langsung
 export const prerender = false;
 
-// 2. Deklarasikan data tiruan (atau data query jika env sudah siap)
-// Gantilah array di bawah ini dengan query drizzle Anda kelak jika database lokal sudah terhubung
 const antreanGudang = [
   { id: 1, nama: "Antrean Plat Besi A1" },
   { id: 2, nama: "Antrean Baja Siku B3" }
 ];
 ---
----
-export const prerender = false;
-
-// Deklarasi data tiruan agar tidak memicu error database di lokal
-const antreanGudang = [
-  { id: 1, nama: "Antrean Plat Besi A1" },
-  { id: 2, nama: "Antrean Baja Siku B3" }
-];
----
-
-
-
-
-
-
 
 <html lang="id">
   <head>
