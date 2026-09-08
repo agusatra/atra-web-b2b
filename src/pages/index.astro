@@ -1,129 +1,62 @@
 ---
 import ProductCatalog from '../components/ProductCatalog.astro';
 import '../styles/global.css';
+
 // Bagian Logika & Data Proyek Atra Web - Industri Hidrolik & Pneumatik
 const namaPerusahaan = "PT. PTM";
+---
 
 <html lang="id">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{namaPerusahaan} - Solusi B2B Hydraulic & Pneumatic</title>
     <style>
-      /* Desain Utama */
-      body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f1f5f9; color: #0f172a; }
-      
-      /* GAYA MENU ATAS (NAVBAR) - Pastikan bagian ini ikut terpasang */
-      .navbar { background: #0f172a; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; border-bottom: 3px solid #ea580c; }
-      .nav-logo { color: white; font-weight: 800; font-size: 1.3rem; text-decoration: none; }
-      .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center; }
-      .nav-menu a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
-      .nav-menu a:hover { color: #ea580c; }
-      .btn-nav-cta { background: #ea580c; color: white !important; padding: 8px 16px; border-radius: 4px; font-weight: 600; display: inline-block; }
-      .btn-nav-cta:hover { background: #c2410c; }
+        /* Desain Utama */
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f1f5f9; }
+        
+        /* GAYA MENU ATAS (NAVBAR) */
+        .navbar { background: #0f172a; display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; }
+        .nav-logo { color: white; font-weight: 800; font-size: 1.3rem; text-decoration: none; }
+        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center; }
+        .nav-menu a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover { color: white; }
+        
+        /* Link Khusus Menu ERP Staf */
+        .btn-erp { background: #2563eb; color: white !important; padding: 6px 12px; border-radius: 4px; font-weight: 6px; }
+        .btn-erp:hover { background: #1d4ed8; }
 
-      /* Gaya Hero Section */
-     header { 
-  /* Memanggil gambar header-bg.webp gabung dengan lapisan gelap transparan rgba */
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('/header-bg.webp'); 
-  
-  /* Mengatur agar gambar pas di tengah kotak dan proporsional */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  color: white; 
-  padding: 100px 20px; /* Ditambah sedikit jarak atas-bawah agar lebih megah */
-  text-align: center; 
-  border-bottom: 5px solid #ea580c; 
-}
-
-      h1 { margin: 0; font-size: 2.7rem; letter-spacing: -0.5px; font-weight: 800; }
-      .sub-hero { color: #cbd5e1; font-size: 1.2rem; margin-top: 15px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.5; }
-      
-      /* Gaya Kartu Produk */
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-      .card-b2b { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-      .card-b2b::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: #ea580c; border-radius: 8px 8px 0 0; }
-      .badge { background: #ffedd5; color: #c2410c; padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; width: max-content; display: block; margin-bottom: 15px; }
-      h3 { margin: 0 0 12px 0; font-size: 1.35rem; color: #1e293b; font-weight: 700; }
-      p { color: #475569; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px; }
-      .btn-cta { display: inline-block; background: #1e293b; color: white; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; text-align: center; border: 1px solid #475569; }
-      .btn-cta:hover { background: #ea580c; color: white; border-color: #ea580c; }
+        .hero { text-align: center; padding: 60px 20px; background: white; border-bottom: 1px solid #e2e8f0; }
+        .hero h1 { color: #0f172a; margin-0; font-size: 2.2rem; }
+        .hero p { color: #64748b; font-size: 1.1rem; margin-top: 10px; }
+        .main-content { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- STRUKTUR MENU ATAS (NAVBAR) -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="navbar">
-      <ul class="nav-menu">
-  <li><a href="/">Beranda</a></li>
-<li><a href="/produk">Produk & Layanan</a></li>
-<li><a href="/tentang">Tentang Kami</a></li>
-
-
-        <li><a href="https://wa.me" target="_blank" class="btn-nav-cta">Hubungi Kami</a></li>
-      </ul>
+        <a href="/" class="nav-logo">{namaPerusahaan}</a>
+        <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/produk">Katalog Produk</a></li>
+            <li><a href="/tentang">Tentang Kami</a></li>
+            <!-- Akses Pintas Menu ERP Tiga PC Staf PTM -->
+            <li><a href="/marketing" class="btn-erp">💻 PC Marketing</a></li>
+            <li><a href="/gudang" class="btn-erp">⚙️ PC Gudang</a></li>
+            <li><a href="/admin" class="btn-erp">🧾 PC Admin</a></li>
+        </ul>
     </nav>
 
-    <!-- Header & Hero Section -->
-    <header>
-      <h1>{namaPerusahaan}</h1>
-      <p class="sub-hero">Penyedia Komponen, Fabrikasi, dan Layanan Rekondisi Silinder Hidrolik & Pneumatik untuk Sektor Industri dan Manufaktur</p>
+    <!-- KONTEN HALAMAN UTAMA -->
+    <header class="hero">
+        <h1>Selamat Datang di Portal {namaPerusahaan}</h1>
+        <p>Sistem ERP Internal & Katalog Distribusi Komponen Logam Industri</p>
     </header>
 
-    <!-- Konten Layanan Utama -->
-    <main class="container">
-      <h2 style="text-align: center; color: #0f172a; font-size: 2rem;">Layanan & Solusi Industri</h2>
-      
-      <div class="grid">
-        {layananB2B.map((layanan) => (
-  <div class="card-b2b">
-    <div>
-      <span class="badge">{layanan.status}</span>
-
-      <!-- KODE BARU UNTUK MEMANGGIL GAMBAR -->
-            <!-- KODE BARU UNTUK MEMANGGIL GAMBAR -->
-      <img src={layanan.gambar}alt="Hydraulic Cylinder" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 15px;" />
-
-      <h3>{layanan.judul}</h3>
-      <p>{layanan.desktop || layanan.deskripsi}</p>
-    </div> <!-- 1. Menutup <div> bagian teks dalam -->
-    <a href={`https://wa.me{encodeURIComponent(layanan.pesanWA)}`} target="_blank" class="btn-cta">
-      Minta Penawaran Harga
-    </a>
-  </div> <!-- 2. Menutup <div class="card-b2b"> -->
-))}
-</div> <!-- 3. Menutup <div class="grid"> -->
-
-<ProductCatalog />
-</main>
- 
-   <!-- KODE BARU: BAGIAN FOOTER -->
-    <footer style="background: #0f172a; color: #cbd5e1; padding: 40px 20px; margin-top: 60px; border-top: 4px solid #ea580c; font-size: 0.9rem;">
-      <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-        
-        <!-- Kolom Info Perusahaan -->
-        <div style="max-width: 400px;">
-          <h3 style="color: white; margin: 0 0 15px 0; font-size: 1.2rem;">PT ATRA WEB</h3>
-          <p style="line-height: 1.6; color: #94a3b8;">Penyedia solusi manufaktur, suplai komponen, dan jasa rekondisi sistem Hydraulic & Pneumatic presisi tinggi untuk sektor industri nasional.</p>
-        </div>
-
-        <!-- Kolom Kontak / Alamat -->
-        <div>
-          <h3 style="color: white; margin: 0 0 15px 0; font-size: 1.2rem;">Hubungi Kami</h3>
-          <p style="margin: 5px 0; color: #94a3b8;">📍 Workshop: Kawasan Industri, Tangerang, Banten</p>
-          <p style="margin: 5px 0; color: #94a3b8;">✉️ Email: info@atraweb.com</p>
-          <p style="margin: 5px 0; color: #94a3b8;">📞 Telp/WA: +62 812-3456-789</p>
-        </div>
-
-      </div>
-
-      <!-- Hak Cipta -->
-      <div style="max-width: 1100px; margin: 30px auto 0 auto; padding-top: 20px; border-top: 1px solid #334155; text-align: center; color: #64748b; font-size: 0.8rem;">
-        &copy; 2026 PT Atra Web. All Rights Reserved. Powered by Agus Atra.
-      </div>
-    </footer>
+    <main class="main-content">
+        <ProductCatalog />
+    </main>
 
 </body>
 </html>
