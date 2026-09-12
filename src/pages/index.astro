@@ -1,62 +1,80 @@
 ---
-import ProductCatalog from '../components/ProductCatalog.astro';
-import '../styles/global.css';
-
-// Bagian Logika & Data Proyek Atra Web - Industri Hidrolik & Pneumatik
-const namaPerusahaan = "PT. PTM";
+// Bagian Frontmatter (Kosong untuk saat ini)
 ---
 
+<!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{namaPerusahaan} - Solusi B2B Hydraulic & Pneumatic</title>
-    <style>
-        /* Desain Utama */
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f1f5f9; }
-        
-        /* GAYA MENU ATAS (NAVBAR) */
-        .navbar { background: #0f172a; display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; }
-        .nav-logo { color: white; font-weight: 800; font-size: 1.3rem; text-decoration: none; }
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        .nav-menu a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
-        .nav-menu a:hover { color: white; }
-        
-        /* Link Khusus Menu ERP Staf */
-        .btn-erp { background: #2563eb; color: white !important; padding: 6px 12px; border-radius: 4px; font-weight: 6px; }
-        .btn-erp:hover { background: #1d4ed8; }
-
-        .hero { text-align: center; padding: 60px 20px; background: white; border-bottom: 1px solid #e2e8f0; }
-        .hero h1 { color: #0f172a; margin-0; font-size: 2.2rem; }
-        .hero p { color: #64748b; font-size: 1.1rem; margin-top: 10px; }
-        .main-content { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atra Digital - Solusi optimasi performa web ekstrem kelas korporat dan AI SEO. Menjadikan website UMKM super cepat, aman standar Cisco, dan ramah Google AI Overview.">
+    <title>Atra Digital | Spesialis Performa Web Ekstrem & AI Overview</title>
 </head>
-<body>
-
-    <!-- NAVIGASI UTAMA -->
-    <nav class="navbar">
-        <a href="/" class="nav-logo">{namaPerusahaan}</a>
-        <ul class="nav-menu">
-            <li><a href="/">Beranda</a></li>
-            <li><a href="/produk">Katalog Produk</a></li>
-            <li><a href="/tentang">Tentang Kami</a></li>
-            <!-- Akses Pintas Menu ERP Tiga PC Staf PTM -->
-            <li><a href="/marketing" class="btn-erp">💻 PC Marketing</a></li>
-            <li><a href="/gudang" class="btn-erp">⚙️ PC Gudang</a></li>
-            <li><a href="/admin" class="btn-erp">🧾 PC Admin</a></li>
-        </ul>
-    </nav>
-
-    <!-- KONTEN HALAMAN UTAMA -->
-    <header class="hero">
-        <h1>Selamat Datang di Portal {namaPerusahaan}</h1>
-        <p>Sistem ERP Internal & Katalog Distribusi Komponen Logam Industri</p>
+<body style="font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; color: #333; line-height: 1.6; background-color: #fcfcfc;">
+    
+    <!-- HEADER -->
+    <header style="border-bottom: 2px solid #eee; padding-bottom: 1.5rem; margin-bottom: 2.5rem; text-align: center;">
+        <h1 style="color: #0070f3; margin-bottom: 0.5rem; font-size: 2.5rem;">Atra Digital</h1>
+        <p style="font-size: 1.25rem; color: #555; margin: 0; font-weight: 500;">Menyelamatkan Bisnis Anda dari Web Lambat & Kode Sampah Agensi Konvensional.</p>
     </header>
 
-    <main class="main-content">
-        <ProductCatalog />
+    <main>
+        <!-- SECTION 1: MASALAH & SOLUSI -->
+        <section style="margin-bottom: 3.5rem; text-align: center;">
+            <h2 style="font-size: 1.8rem; color: #111;">Web Bisnis Anda Lambat? Kehilangan Calon Pembeli?</h2>
+            <p style="font-size: 1.1rem; max-width: 750px; margin: 1rem auto; color: #444;">
+                Banyak UMKM membayar mahal agensi luar, namun mendapatkan website lambat yang penuh kode sampah. Kami hadir membawa solusi level korporat: menjinakkan page builder seberat Elementor hingga tembus <strong>Skor 99+ di Google Mobile</strong> dan <strong>Grade A di GTmetrix</strong>.
+            </p>
+        </section>
+
+        <!-- SECTION 2: BUKTI RIIL PORTFOLIO (STUDI KASUS) -->
+        <section style="margin-bottom: 3.5rem; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eaeaea;">
+            <h3 style="font-size: 1.5rem; color: #0070f3; margin-top: 0; text-align: center;">Bukti Nyata Kerja Kami (Studi Kasus Korporat)</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Kami mempraktikkan apa yang kami bicarakan. Berikut adalah hasil optimasi nyata pada sektor industri B2B nasional:</p>
+            
+            <div style="background: #fafafa; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #00c853; margin-bottom: 1.5rem;">
+                <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #111;">PT Perdana Teknik Mandiri (perdanateknikmandiri.co.id)</h4>
+                <p style="margin: 0 0 1rem 0; color: #555;">Tantangan: Mengoptimasi website berbasis Elementor yang terkenal berat tanpa mengubah desain visual.</p>
+                <ul style="padding-left: 1.2rem; margin: 0; color: #222; font-weight: 500;">
+                    <li>🚀 Skor Google PageSpeed Insights Mobile: 99/100 (Performance) & 100 (SEO)</li>
+                    <li>📊 Nilai Struktur GTmetrix: Grade A (LCP 1.5 Detik Instan)</li>
+                    <li>🤖 Uji Agen AI (Lighthouse): Agentic Browsing 3/3 Sempurna (Siap untuk Google AI Overview)</li>
+                </ul>
+            </div>
+            <p style="font-size: 0.9rem; color: #666; font-style: italic; text-align: center;">*Calon pelanggan dipersilakan menguji langsung kecepatan domain di atas melalui Google PageSpeed resmi untuk membuktikan keaslian data kami.</p>
+        </section>
+
+        <!-- SECTION 3: MENGAPA KAMI BERBEDA & INTEGRITAS -->
+        <section style="margin-bottom: 3.5rem; background: #eef2ff; padding: 2rem; border-radius: 12px; border: 1px solid #e0e7ff;">
+            <h3 style="font-size: 1.4rem; color: #1e3a8a; margin-top: 0;">Kolaborasi Dua Generasi: Pengalaman & Inovasi</h3>
+            <ul style="padding-left: 1.2rem; color: #374151;">
+                <li style="margin-bottom: 0.75rem;"><strong>Senior IT Internal & Security Expert (Ayah):</strong> Berpengalaman mengelola infrastruktur server korporat riil setiap hari, memangkas kode sampah seminimal mungkin, dan mengamankan sistem dengan standar sertifikasi global <strong>Cisco</strong>.</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Fresh AI & Jamstack Developer (Anak - Talenta TKJ):</strong> Membawa ketajaman teknologi modern Astro Jamstack demi kompresi data maksimal agar website Anda ramah terhadap robot perayap AI modern.</li>
+            </ul>
+            <div style="background: #fff; padding: 1rem; border-radius: 6px; margin-top: 1rem; border-left: 4px solid #indigo;">
+                <p style="margin: 0; font-weight: 500; color: #1e3a8a; font-size: 0.95rem;">
+                    🔒 Komitmen Etika Bisnis: Kami membatasi diri untuk tidak menerima klien dari industri kompetitor yang sama dengan Anda demi menjaga fokus dan peringkat organik Anda tetap nomor satu tanpa konflik kepentingan.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CALL TO ACTION (TOMBOL TRANSAKSI) -->
+        <section style="text-align: center; margin-bottom: 2rem; padding: 1rem 0;">
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Siap Membuat Web Bisnis Anda Mendominasi Halaman Depan?</h3>
+            <p style="color: #666; margin-bottom: 1.5rem;">Dapatkan Audit Kode Sampah & Konsultasi Kesiapan AI Web Anda Gratis Selama 15 Menit.</p>
+            
+            <!-- Silakan ganti nomor WhatsApp di bawah ini (628xxxxxxxx) dengan nomor aktif Anda atau anak Anda -->
+            <a href="https://wa.me" 
+               target="_blank" 
+               style="display: inline-block; background-color: #25d366; color: white; text-decoration: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 50px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: transform 0.2s;">
+               💬 Hubungi Kami via WhatsApp (Konsultasi Gratis)
+            </a>
+        </section>
     </main>
+
+    <footer style="text-align: center; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 1.5rem; margin-top: 4rem;">
+        <p>&copy; 2026 Atra Digital Indonesia. All Rights Reserved. Powered by Atra Digital.</p>
+    </footer>
 
 </body>
 </html>

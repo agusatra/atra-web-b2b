@@ -1,5 +1,5 @@
 {
-  "name": "atra-web-b2b",
+  "name": "major-mars",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,12 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.10",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vercel/postgres": "^0.10.0",
-    "astro": "^7.2.9",
-    "drizzle-orm": "^0.45.2",
-    "tailwindcss": "^4.3.3"
+    "astro": "^7.3.2"
   },
   "allowScripts": {
     "esbuild": true
